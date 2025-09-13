@@ -5,12 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nosotros</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
   <style>
-    .empleado img {
-      width: 150px;
-      height: 150px;
+    body {
+      background-color: #f8f9fa;
+    }
+    .accordion-button {
+      font-weight: bold;
+    }
+    .content-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .content-box img {
+      width: 250px;
+      height: 180px;
       object-fit: cover;
+      border-radius: 8px;
+      background-color: #6c757d;
+    }
+    .actions {
+      margin-top: 15px;
+    }
+    .actions button {
+      margin-right: 10px;
     }
   </style>
 </head>
@@ -18,104 +36,169 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Mi Sitio</a>
+      <a class="navbar-brand" href="#">Nombre de la empresa</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Log In</a></li>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.html">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sobre.html">About</a></li>
         </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </nav>
 
-  <!-- CONTENIDO -->
+  <!-- CONTENIDO PRINCIPAL -->
   <div class="container my-5">
-    <h1 class="text-center">Sobre Nosotros</h1>
+    <h2 class="text-center mb-4">Sobre Nosotros</h2>
 
-    <!-- Acordeón Bootstrap -->
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionAbout">
+      <!-- MISIÓN -->
       <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#empresa">Nuestra Empresa</button>
+        <h2 class="accordion-header" id="headingMision">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mision">
+            Misión
+          </button>
         </h2>
-        <div id="empresa" class="accordion-collapse collapse show">
+        <div id="mision" class="accordion-collapse collapse show" data-bs-parent="#accordionAbout">
           <div class="accordion-body">
-            Somos una empresa dedicada a ofrecer productos de alta calidad en tecnología y estilo de vida.
+            <div class="content-box">
+              <img src="https://trabajosocialybienestaruniversitario.wordpress.com/wp-content/uploads/2011/01/bienestar-universitario.jpg" alt="Misión">
+              <div>
+                <h5>Misión</h5>
+                <p id="texto-mision">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat.</p>
+                <div class="actions">
+                  <button class="btn btn-outline-primary" onclick="cambiarTamaño('texto-mision')">Cambiar tamaño de letra</button>
+                  <button class="btn btn-outline-secondary" onclick="cambiarColor('texto-mision')">Cambiar color de letra</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- VISIÓN -->
       <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mision">Misión</button>
+        <h2 class="accordion-header" id="headingVision">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vision">
+            Visión
+          </button>
         </h2>
-        <div id="mision" class="accordion-collapse collapse">
-          <div class="accordion-body">Nuestra misión es mejorar la vida de las personas con tecnología accesible y de calidad.</div>
+        <div id="vision" class="accordion-collapse collapse" data-bs-parent="#accordionAbout">
+          <div class="accordion-body">
+            <div class="content-box">
+              <img src="https://www.uazuay.edu.ec/sites/default/files/public/2023-08/Uazuay-PP-Misi%C3%B3nYVisi%C3%B3n.webp" alt="Visión">
+              <div>
+                <h5>Visión</h5>
+                <p id="texto-vision">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat.</p>
+                <div class="actions">
+                  <button class="btn btn-outline-primary" onclick="cambiarTamaño('texto-vision')">Cambiar tamaño de letra</button>
+                  <button class="btn btn-outline-secondary" onclick="cambiarColor('texto-vision')">Cambiar color de letra</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vision">Visión</button>
-        </h2>
-        <div id="vision" class="accordion-collapse collapse">
-          <div class="accordion-body">Ser líderes en innovación y satisfacción del cliente a nivel global.</div>
+
+<!-- EQUIPO DE TRABAJO -->
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingEquipo">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#equipo">
+      Equipo de trabajo
+    </button>
+  </h2>
+  <div id="equipo" class="accordion-collapse collapse" data-bs-parent="#accordionAbout">
+    <div class="accordion-body">
+
+      <!-- CARRUSEL -->
+      <div id="carouselEquipo" class="carousel slide bg-light p-4 rounded shadow-sm" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+
+          <!-- EMPLEADO 1 -->
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328e60d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" 
+                 class="d-block mx-auto rounded-circle mb-3" alt="Empleado 1" width="200" height="200">
+            <h5>Ana López</h5>
+            <p class="text-muted">Gerente de Proyectos</p>
+            <div class="d-flex justify-content-end pe-4">
+              <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary btn-sm me-2">📘</a>
+              <a href="https://twitter.com" target="_blank" class="btn btn-outline-info btn-sm me-2">🐦</a>
+              <a href="https://linkedin.com" target="_blank" class="btn btn-outline-secondary btn-sm">💼</a>
+            </div>
+          </div>
+
+          <!-- EMPLEADO 2 -->
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1603415526600-6e9a5c72c8a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" 
+                 class="d-block mx-auto rounded-circle mb-3" alt="Empleado 2" width="200" height="200">
+            <h5>Carlos Méndez</h5>
+            <p class="text-muted">Analista de Marketing</p>
+            <div class="d-flex justify-content-end pe-4">
+              <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary btn-sm me-2">📘</a>
+              <a href="https://twitter.com" target="_blank" class="btn btn-outline-info btn-sm me-2">🐦</a>
+              <a href="https://linkedin.com" target="_blank" class="btn btn-outline-secondary btn-sm">💼</a>
+            </div>
+          </div>
+
+          <!-- EMPLEADO 3 -->
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" 
+                 class="d-block mx-auto rounded-circle mb-3" alt="Empleado 3" width="200" height="200">
+            <h5>Lucía Ramírez</h5>
+            <p class="text-muted">Desarrolladora Web</p>
+            <div class="d-flex justify-content-end pe-4">
+              <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary btn-sm me-2">📘</a>
+              <a href="https://twitter.com" target="_blank" class="btn btn-outline-info btn-sm me-2">🐦</a>
+              <a href="https://linkedin.com" target="_blank" class="btn btn-outline-secondary btn-sm">💼</a>
+            </div>
+          </div>
+
         </div>
+
+        <!-- CONTROLES DEL CARRUSEL -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselEquipo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselEquipo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
+
     </div>
-
-  <!-- Empleados -->
-<div class="row text-center mt-5">
-  <!-- Empleado 1 -->
-  <div class="col-md-4 empleado">
-    <img src="https://b282c5de4f50ed30d5ce-25e9f6b52714e6c3d4dbb7e330152014.ssl.cf3.rackcdn.com/uploaded_thumb_medium/75ced0231b30d5bbba39592fef39e64d/fotografia_curriculum_linkedin_corporativa_madrid_003.jpg" 
-         class="rounded-circle mb-2" alt="Empleado 1 - Ana">
-    <h5>Ana Torres</h5>
-    <p>Gerente General</p>
-    <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-sm">Facebook</a>
-    <a href="https://twitter.com" target="_blank" class="btn btn-info btn-sm">Twitter</a>
-    <a href="https://linkedin.com" target="_blank" class="btn btn-dark btn-sm">LinkedIn</a>
-  </div>
-
-  <!-- Empleado 2 -->
-  <div class="col-md-4 empleado">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRfYrylACTvymydkMp4pewL5OEi8PNWU7eoiawtkFGi1FwL0TixtQptlEUe377FgAV6CE&usqp=CAU" 
-         class="rounded-circle mb-2" alt="Empleado 2 - Carlos">
-    <h5>Carlos Pérez</h5>
-    <p>Jefe de Tecnología</p>
-    <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-sm">Facebook</a>
-    <a href="https://twitter.com" target="_blank" class="btn btn-info btn-sm">Twitter</a>
-    <a href="https://linkedin.com" target="_blank" class="btn btn-dark btn-sm">LinkedIn</a>
-  </div>
-
-  <!-- Empleado 3 -->
-  <div class="col-md-4 empleado">
-    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80" 
-         class="rounded-circle mb-2" alt="Empleado 3 - Laura">
-    <h5>Laura Gómez</h5>
-    <p>Directora de Marketing</p>
-    <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-sm">Facebook</a>
-    <a href="https://twitter.com" target="_blank" class="btn btn-info btn-sm">Twitter</a>
-    <a href="https://linkedin.com" target="_blank" class="btn btn-dark btn-sm">LinkedIn</a>
   </div>
 </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Mi Sitio Web | Todos los derechos reservados</p>
-      <p>
-        <a href="index.html">Inicio</a> |
-        <a href="productos.html">Productos</a> |
-        <a href="sobre.html">Sobre nosotros</a> |
-        <a href="login.html">Log In</a>
-      </p>
-    </div>
-  </footer>
+  <!-- SCRIPT -->
+  <script>
+    function cambiarTamaño(id) {
+      const texto = document.getElementById(id);
+      if (texto.style.fontSize === "1.5rem") {
+        texto.style.fontSize = "1rem";
+      } else {
+        texto.style.fontSize = "1.5rem";
+      }
+    }
+
+    function cambiarColor(id) {
+      const texto = document.getElementById(id);
+      if (texto.style.color === "red") {
+        texto.style.color = "#000";
+      } else {
+        texto.style.color = "red";
+      }
+    }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
